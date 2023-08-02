@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +6,6 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'watermelon';
+  constructor() {}
+  title = 'watermelon';   
 }
