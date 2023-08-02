@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-product-list',
@@ -7,9 +8,12 @@ import { Component } from '@angular/core';
 })
 export class ProductListComponent {
   products: any[] = [];
- 
-  constructor() {}
 
+  constructor(private apiService: ApiService) {}
+  
   ngOnInit() {
+    this.apiService.getProducts().subscribe((data: any[]) =>{
+      this.products = data;
+    })
     }
   }
