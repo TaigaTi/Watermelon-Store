@@ -1,0 +1,36 @@
+.product-image-container
+{
+    float: left;
+}
+
+.product-image
+{
+    max-width: 80%;
+    border-radius: 2vw;
+}
+
+.product-name-container
+{
+    text-align: center;
+  color: #0e9921;
+  text-decoration: none;
+}
+
+.product-name{
+    color: #0e9921;
+    text-decoration: none;
+}
+
+.product-container
+{
+    text-align: center;
+    max-width: 20vw;
+    margin: 2vw 2vw 2vw 2vw;
+    float: left;
+}
+
+.product-price
+{
+    font-size: large;
+    font-weight: bold;
+}

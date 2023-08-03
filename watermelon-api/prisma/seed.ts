@@ -1,51 +1,53 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
 const addDays = (date: Date, days: number): Date => {
-    let result = new Date(date);
-    result.setDate(result.getDate() + days);
-    return result;
-  };
+  let result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+};
 
 async function main() {
-    const  user1 = await prisma.user.upsert({
-        where: {email: 'wsadmin@email.com'},
-        update: {},
-        create: {
-            name: 'WS Admin',
-            email: 'wsadmin@email.com',
-            password: 'password',
-        },
-    });
+  const user1 = await prisma.user.upsert({
+    where: { email: 'wsadmin@email.com' },
+    update: {},
+    create: {
+      name: 'WS Admin',
+      email: 'wsadmin@email.com',
+      password: 'password',
+    },
+  });
 
-    const product1 = await prisma.product.upsert({
-        where: {name: 'Watermelon Juice'},
-        update: {},
-        create: {
-            name: 'Watermelon Juice',
-            description: 'All natural watermelon juice!',
-            price: 8,
-        },
-    });
+  const product1 = await prisma.product.upsert({
+    where: { name: 'Watermelon Juice' },
+    update: {},
+    create: {
+      name: 'Watermelon Juice',
+      description: 'All natural watermelon juice!',
+      price: 8,
+      image:
+      'https://bellyfull.net/wp-content/uploads/2022/06/Watermelon-Juice-blog-4.jpg'
+    },
+  });
 
-    const shipping1 = await prisma.shipping.upsert({
-        where: {type: 'Two Day'},
-        update: {},
-        create: {
-            type: 'Two Day',
-            price: 30,
-            days: 2,
-            eta:  addDays(new Date, 2),
-        },
-    });
+  const shipping1 = await prisma.shipping.upsert({
+    where: { type: 'Two Day' },
+    update: {},
+    create: {
+      type: 'Two Day',
+      price: 30,
+      days: 2,
+      eta: addDays(new Date(), 2),
+    },
+  });
 }
 
 main()
-    .catch((e) => {
-        console.error(e);
-        process.exit(1);
-    })
-    .finally(async ()=> {
-        await prisma.$disconnect();
-    })
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });

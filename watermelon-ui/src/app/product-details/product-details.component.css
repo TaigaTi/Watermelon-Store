@@ -1,0 +1,39 @@
+.product-name
+{
+  color: #0e9921;
+  text-decoration: none;
+}
+
+.product-image-container
+{
+    width: 25vw;
+    float: left;
+}
+
+.product-image
+{
+    max-width: 100%;
+    border-radius: 2vw;
+}
+
+.product-price
+{
+    margin-top: 2vw;
+    font-weight: bold;
+    font-size: large;
+}
+
+.product-details-container{
+    float: left;
+}
+
+.product-details{
+    margin-left: 5vw;
+    float:left;
+}
+
+.product-description
+{
+    font-size: medium;
+    margin-bottom: 3vw;
+}

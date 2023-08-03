@@ -5,8 +5,11 @@ export class CreateProductDto {
      name: string;
 
      @ApiProperty()
-     description?: string
+     description?: string;
 
      @ApiProperty()
      price: number;
+
+     @ApiProperty()
+     image: string;
 }
