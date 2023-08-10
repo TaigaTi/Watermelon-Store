@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CartComponent } from './cart/cart.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     NavBarComponent,
     ProductListComponent,
     ProductDetailsComponent,
+    CartComponent,
+    SideBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +28,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
+      {path: 'cart', component: CartComponent}
     ]),
   ],
   providers: [],

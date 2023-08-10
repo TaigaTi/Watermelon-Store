@@ -6,22 +6,20 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
   providedIn: 'root'
 })
 export class CartService {
-  product: any[] = [];
-  items: any[]=[];
+  items: any[] = [];
+  product: any;
 
   constructor(private apiService:ApiService,private route:ActivatedRoute) { }
 
   addToCart(){
-    const routeParams = this.route.snapshot.paramMap;
-    const productIdFromRoute = Number(routeParams.get('productId'));
+     const routeParams = this.route.snapshot.paramMap;
+     const productIdFromRoute = Number(routeParams.get('productId'));
 
-    this.apiService
-      .getProductsById(productIdFromRoute)
-      .subscribe((data: any) => {
-        this.product = data;
-      });
-
-      this.items.push(this.product);
+     this.product = this.apiService.getProductsById(productIdFromRoute);
+    
+    this.items.push(this.product);
+    console.log(this.items);
+    // localStorage.setItem('cart-items', JSON.stringify(this.product))
   }
 
   getItems() {

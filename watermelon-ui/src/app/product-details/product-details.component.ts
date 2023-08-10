@@ -3,6 +3,7 @@ import { ApiService } from '../services/api.service';
 import { CartService } from '../services/cart.service';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
