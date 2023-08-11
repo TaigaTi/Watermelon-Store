@@ -1,5 +1,28 @@
 <div class="summary-container">
-  <div>
-    <h2>Subtotal</h2>
+  <div class="summary-box">
+    <div class="title">
+      <h2>Subtotal</h2>
+    </div>
+
+    <div class="subtotal-box">
+      <div class="info">
+        <ul class="list">
+          <li class="subtotal-item">Number of Items:</li>
+          <li class="value">{{ items.length }}</li>
+        </ul>
+
+        <ul id="subtotal" class="list">
+          <li class="subtotal-item">Subtotal</li>
+          <li class="value">{{ subtotal | currency }}</li>
+        </ul>
+      </div>
+
+      <div class="checkout">
+        <div class="button-container">
+          <button type="button">Checkout</button>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
