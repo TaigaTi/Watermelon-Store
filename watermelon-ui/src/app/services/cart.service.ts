@@ -1,35 +1,36 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Product } from '../entities/product-entity';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
-  product: any[] = [];
-  items: any[]=[];
+  items: Product[] = [];
+  product: Product;
 
-  constructor(private apiService:ApiService,private route:ActivatedRoute) { }
+  constructor(private apiService: ApiService, private route: ActivatedRoute) {}
 
-  addToCart(){
-    const routeParams = this.route.snapshot.paramMap;
-    const productIdFromRoute = Number(routeParams.get('productId'));
+ngOnInit()
+{
+}
 
+  addToCart(productIdFromRoute: number) {
     this.apiService
       .getProductsById(productIdFromRoute)
-      .subscribe((data: any) => {
+      .subscribe((data) => {
         this.product = data;
+        this.items.push(this.product);
       });
-
-      this.items.push(this.product);
   }
 
   getItems() {
     return this.items;
   }
 
-  clearCart(){
-    this.items=[];
+  clearCart() {
+    this.items = [];
     return this.items;
   }
 }

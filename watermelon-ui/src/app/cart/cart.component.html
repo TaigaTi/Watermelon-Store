@@ -1,0 +1,37 @@
+<div class="cart-container">
+  <h2>Cart</h2>
+
+<div *ngFor="let item of items">
+    <div class="product-details-container">
+        <div class="product-image-container">
+          <img class="product-image" src="{{ item.image }}" />
+        </div>
+    
+        <div class="product-details">
+          <div>
+            <h1 class="product-name">{{ item.name }}</h1>
+          </div>
+    
+          <div>
+            <p class="product-price">Price: {{ item.price | currency }}</p>
+            <p class="product-description">
+              Description: {{ item.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+</div>
+
+<div>
+    <div *ngIf = "items.length != 0">
+        <button id="clear-cart" type="button" (click)="clearCart()">Clear Cart</button>
+    </div>
+    
+    <div *ngIf = "items.length == 0">
+        <p>Your cart is empty. Let's fix that!</p>
+        <a [routerLink]="['/']">Continue Shopping</a>
+    </div>
+</div>
+
+<app-cart-sub></app-cart-sub>
+</div>
