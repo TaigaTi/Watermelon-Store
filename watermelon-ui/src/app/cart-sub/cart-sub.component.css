@@ -1,0 +1,62 @@
+.summary-container {
+  background-color: rgb(240, 240, 240);
+  outline: 1px rgb(231, 231, 231) solid;
+  border-radius: 1vw;
+  width: 22vw;
+}
+
+.title {
+  text-align: center;
+}
+
+.title h2 {
+  padding-top: 1.5vw;
+}
+
+.info {
+  padding-left: 1vw;
+  padding-bottom: 2vw;
+}
+
+.info * {
+  padding-left: 0.2vw;
+  padding-bottom: 0.5vw;
+}
+
+button{
+    justify-content: center;
+    text-align: center;
+    border-radius: 0.5vw;
+}
+
+.button-container
+{
+    display: flex;
+    justify-content: center;
+}
+
+.value{
+    float: right;
+}
+
+.subtotal-item
+{
+    float: left;
+}
+
+.list
+{
+    font-size: 1vw;
+    padding: 1vw;
+    padding-top: 0.8vw;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+#subtotal{
+    font-weight: bold;
+}
+
+.subtotal-box{
+    padding: 0vw 1vw 1vw 1.5vw;
+}

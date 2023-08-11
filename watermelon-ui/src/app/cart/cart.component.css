@@ -41,9 +41,23 @@
 
 app-cart-sub {
   float: left;
+  padding-left: 2vw;
 }
 
 .cart-container {
     float: left;
-    width: 80vw;
+    width: 55vw;
 }
+
+#clear-cart{
+  background-color: rgb(224, 55, 106);
+  font-weight: bold;
+  font-size: 1.2vw;
+  border-radius: 0.5vw;
+  margin-right: 10vw;
+  margin-top: 3vw;
+  padding: 1vw 2vw;
+  float: right;
+}
+
+
