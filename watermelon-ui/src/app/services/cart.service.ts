@@ -22,15 +22,22 @@ ngOnInit()
       .subscribe((data) => {
         this.product = data;
         this.items.push(this.product);
+
+        sessionStorage.setItem("Cart", JSON.stringify(this.items));
       });
   }
 
   getItems() {
+    const Items: string = sessionStorage.getItem("Cart")!;
+
+    if (Items) {
+      this.items = JSON.parse(Items) as Product[];
+    }
     return this.items;
   }
 
   clearCart() {
-    this.items = [];
+    sessionStorage.removeItem("Cart");
     return this.items;
   }
 }
