@@ -20,7 +20,6 @@ model product {
   description String?
   price       Int
   image       String   
-  cart        Int    
 }
 
 model shipping {
